@@ -1,20 +1,82 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
 
-export default function App() {
+import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+
+import Home from './screens/Home';
+import Albuns from './screens/Albuns';
+import DetalhesA from './screens/DetalhesA';
+import Cantores from './screens/Cantores';
+import DetalhesC from './screens/DetalhesC';
+
+const Drawer = createDrawerNavigator();
+
+export default function App(){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  <NavigationContainer>
+    <Drawer.Navigator
+    initialRouteName="Home"
+    backBehavior="history"
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: '#133081'
+      },
+       headerTintColor: '#085852',
+       drawerActiveTintColor: '#00ccff',
+       drawerInactiveTintColor: '#001527'
+    }}
+    >
+      <Drawer.Screen
+      name="Home"
+      component={Home}
+      options={{
+        title: 'Início',
+        drawerLabel: 'Início'
+      }}
+      />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      <Drawer.Screen
+      name="Álbuns"
+      component={Albuns}
+      options={{
+        title: 'Lista de Albuns Bons :3',
+        drawerLabel: 'Lista De Albuns'
+      }}
+      />
+
+      <Drawer.Screen
+      name="Detalhes dos Álbums"
+      component={DetalhesA}
+      options={{
+        title: 'Detalhes dos Albuns Bons :3',
+        drawerItemStyle: {
+          display: 'none'
+        }
+      }}
+      />
+
+      <Drawer.Screen
+      name="Cantores"
+      component={Cantores}
+      options={{
+        title: 'Lista de Cantoras Boas :3',
+        drawerLabel: 'Lista De Cantores'
+      }}
+      />
+
+      <Drawer.Screen
+      name="Detalhes das Cantoras"
+      component={DetalhesC}
+      options={{
+        title: 'Detalhes das Cantoras Boas :3',
+        drawerItemStyle: {
+          display: 'none'
+        }
+      }}
+      />
+
+    </Drawer.Navigator>
+  </NavigationContainer>
+  )
+}
