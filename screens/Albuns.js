@@ -55,7 +55,7 @@ export default function Albuns({ navigation }){
         <TouchableOpacity
         style={styles.listaItem}
         onPress={() => 
-            navigation.navigate('Detalhes', {
+            navigation.navigate('DetalhesA', {
                 albuns: item
             })
         }
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
 
   listaItem: {
 
-    backgroundColor: '#89cbfd',
+    backgroundColor: '#033f68',
 
     marginRight: 15,
 
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
 
     fontSize: 14,
 
-    color: '#098bf5',
+    color: '#09d2f5',
 
     marginBottom: 2
 
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
 
     fontWeight: 'normal',
 
-    color: '#003764'
+    color: '#088fb1'
 
   }
 

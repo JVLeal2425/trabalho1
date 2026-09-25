@@ -7,7 +7,7 @@ export default function Home ({ navigation }){
                 Catálogo de Álbuns
             </Text>
             <Text style={styles.texto}>
-                Confira alguns álbuns boms.
+                Confira alguns álbuns bons.
             </Text>
             <TouchableOpacity
             style={styles.botao}

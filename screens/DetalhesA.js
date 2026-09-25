@@ -118,6 +118,8 @@ const styles = StyleSheet.create({
 
   titulo: {
 
+    color: 'rgb(29, 120, 156)',
+
     fontSize: 26,
 
     fontWeight: 'bold',
@@ -131,6 +133,8 @@ const styles = StyleSheet.create({
 
   informacao: {
 
+    color: 'rgb(29, 120, 156)',
+
     fontSize: 17,
 
     marginBottom: 5
@@ -139,6 +143,8 @@ const styles = StyleSheet.create({
 
 
   sinopse: {
+
+    color: 'rgb(29, 120, 156)',
 
     fontSize: 16,
 

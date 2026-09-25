@@ -37,7 +37,7 @@ export default function App(){
       />
 
       <Drawer.Screen
-      name="Álbuns"
+      name="Albuns"
       component={Albuns}
       options={{
         title: 'Lista de Albuns Bons :3',
@@ -46,7 +46,7 @@ export default function App(){
       />
 
       <Drawer.Screen
-      name="Detalhes dos Álbums"
+      name="DetalhesA"
       component={DetalhesA}
       options={{
         title: 'Detalhes dos Albuns Bons :3',
@@ -66,7 +66,7 @@ export default function App(){
       />
 
       <Drawer.Screen
-      name="Detalhes das Cantoras"
+      name="DetalhesC"
       component={DetalhesC}
       options={{
         title: 'Detalhes das Cantoras Boas :3',

@@ -1,6 +1,5 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 import { useState } from 'react';
-import * as Speech from 'expo-speech';
 
 const cantores = [
     {
@@ -34,26 +33,30 @@ const cantores = [
         albuns: 'Born To Die'
     },
 ];
-export default function Cantores(){
-
-    const falar = () => {
-    Speech.speak(nome, {
-      language: 'eng-US',
-      pitch: 1.0,
-      rate: 1.5,
-    });
+export default function Cantores({navigation}){
 
     const criaItem = ({item}) => (
-        <View style={styles.item}>
+        <TouchableOpacity
+                onPress={() => 
+                    navigation.navigate('DetalhesC', {
+                        cantores: item
+                    })
+                }
+                >
+                <View style={styles.item}>
             <Text style={styles.nome}>
                 {item.nome}
             </Text>
-            <Text style={styles.album}>
-                {item.album}
+            <Text style={styles.albuns}>
+                {item.albuns}
             </Text>
-        </View>
-    );
+            </View>,
+                </TouchableOpacity>
+            );
+        
+    
     return (
+
         <View style={styles.container}>
             <Text style={styles.titulo}>
                 Artistas
@@ -67,15 +70,10 @@ export default function Cantores(){
               keyExtractor={item => item.id}
               showsVerticalScrollIndicator={false}
             />
-            <Button style={styles.botao}
-        title="Ouvir Texto"
-        onPress={falar}
-        color = "#bd0a0a"
-        />
         </View>
     )
 };
-}
+
 
 const styles = StyleSheet.create({
 
@@ -100,6 +98,8 @@ const styles = StyleSheet.create({
 
         marginBottom: 5,
 
+        color: '#9999cc'
+
     },
 
 
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
 
     item: {
 
-        backgroundColor: '#073858',
+        backgroundColor: '#064670',
 
         padding: 20,
 
@@ -132,6 +132,8 @@ const styles = StyleSheet.create({
 
 
     nome: {
+
+        color: 'rgba(0, 153, 94, 0.6)',
 
         fontSize: 19,
 
